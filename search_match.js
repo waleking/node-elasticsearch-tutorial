@@ -20,7 +20,7 @@
       query: {
         match: {
           title: {
-            query: 'Quist partiatur',
+            query: 'reprehenderit',
             minimum_should_match: 3,
             fuzziness: 2
           }

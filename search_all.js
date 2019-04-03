@@ -16,15 +16,16 @@
   const test = function test() {
     let body = {
       size: 20,
-      from: 0,
+      from: 10,
       query: {
-        match_all: {}
+        match_all: {} //simplest search type
       }
     };
 
     console.log(`retrieving all documents (displaying ${body.size} at a time)...`);
     search('library', body)
     .then(results => {
+      console.log(results);
       console.log(`found ${results.hits.total} items in ${results.took}ms`);
       console.log(`returned article titles:`);
       results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - ${hit._source.title}`));
